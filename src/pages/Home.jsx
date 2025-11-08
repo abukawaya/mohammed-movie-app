@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Search, Film, TrendingUp, Sparkles, MessageCircle, X, Send, Bot} from "lucide-react";
+import { Search, Film, TrendingUp, Sparkles, Send, Bot} from "lucide-react";
 import MovieCard from "../Components/MovieCard";
 import { searchMovies, getPopularMovies } from "../Services/api";
 
@@ -1665,5 +1665,6 @@ html, body {
     </div>
   );
 }
+
 
 export default Home;
