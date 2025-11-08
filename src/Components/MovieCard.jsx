@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
-import { Heart, HeartOff, Bot, Loader2 } from "lucide-react";
+import { Heart, HeartOff, Bot, Loader2 } from "lucide-react"; // تم حذف Sparkles
 
 function MovieCard({ movie }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
@@ -19,11 +19,11 @@ function MovieCard({ movie }) {
       const parsed = JSON.parse(cached);
       setSummary(parsed.text);
       const timePassed = Date.now() - parsed.timestamp;
-      // تحديث ذكي بعد 24 ساعة بدون تأخير العرض
       if (timePassed > 24 * 60 * 60 * 1000) {
         refreshSummaryInBackground();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movie.id]);
 
   // ⚙️ تحديث الملخص في الخلفية بدون تعطيل المستخدم
@@ -78,19 +78,16 @@ function MovieCard({ movie }) {
     e.preventDefault();
     setError("");
 
-    // لو الملخص ظاهر حالياً، نخفيه
     if (showSummary) {
       setShowSummary(false);
       return;
     }
 
-    // لو الملخص جاهز، نعرضه فوراً
     if (summary) {
       setShowSummary(true);
       return;
     }
 
-    // غير موجود؟ نبدأ التحميل
     setIsLoading(true);
     setShowSummary(true);
 
@@ -109,7 +106,6 @@ function MovieCard({ movie }) {
     }
   }
 
-  // 🚀 تحميل ذكي قبل الطلب (عند مرور الماوس)
   function handleHover() {
     if (hovered.current || summary) return;
     hovered.current = true;
@@ -194,6 +190,5 @@ function MovieCard({ movie }) {
     </div>
   );
 }
-
 
 export default MovieCard;
