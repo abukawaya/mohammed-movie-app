@@ -90,7 +90,7 @@ function Home() {
           "Authorization": "Bearer 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",
         },
         body: JSON.stringify({
-          model: "google/gemini-flash-1.5",
+          model: "google/gemini-2.0-flash-exp:free",
           messages: [
             {
               role: "system",
@@ -1668,6 +1668,7 @@ body {
 }
 
 export default Home;
+
 
 
 
