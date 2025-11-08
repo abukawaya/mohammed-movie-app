@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
-import { Heart, HeartOff, Bot, Loader2, Sparkles } from "lucide-react";
+import { Heart, HeartOff, Bot, Loader2 } from "lucide-react";
 
 function MovieCard({ movie }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
@@ -194,5 +194,6 @@ function MovieCard({ movie }) {
     </div>
   );
 }
+
 
 export default MovieCard;
