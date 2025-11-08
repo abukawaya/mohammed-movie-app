@@ -90,7 +90,7 @@ function Home() {
           "Authorization": "Bearer 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",
         },
         body: JSON.stringify({
-          model: "openai/gpt-oss-20b:free",
+          model: "meta-llama/llama-3.1-8b-instruct:free",
           messages: [
             {
               role: "system",
@@ -99,6 +99,7 @@ function Home() {
             { role: "user", content: userMessage }
           ],
         }),
+        
       });
 
       const data = await response.json();
@@ -1666,6 +1667,7 @@ body {
 }
 
 export default Home;
+
 
 
 
