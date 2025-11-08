@@ -1657,9 +1657,7 @@ body {
   }
 }
 
-html, body {
-  min-height: 200vh;
-}
+
 
       `}</style>
     </div>
@@ -1668,3 +1666,4 @@ html, body {
 
 
 export default Home;
+
