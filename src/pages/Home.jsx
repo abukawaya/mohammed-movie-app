@@ -87,7 +87,7 @@ function Home() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
         },
         body: JSON.stringify({
           model: "openai/gpt-4o-mini",
@@ -1666,6 +1666,7 @@ body {
 }
 
 export default Home;
+
 
 
 
