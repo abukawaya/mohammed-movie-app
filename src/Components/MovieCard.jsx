@@ -59,10 +59,10 @@ function MovieCard({ movie }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
       },
       body: JSON.stringify({
-        model: "openai/gpt-4o-mini",
+        model: "nvidia/nemotron-nano-12b-v2-vl:free",
         messages: [{ role: "user", content: prompt }],
       }),
     });
@@ -192,3 +192,4 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
+
