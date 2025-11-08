@@ -87,7 +87,7 @@ function Home() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
         },
         body: JSON.stringify({
           model: "google/gemini-2.0-flash-exp:free",
@@ -1668,6 +1668,7 @@ body {
 }
 
 export default Home;
+
 
 
 
