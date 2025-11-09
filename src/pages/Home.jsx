@@ -1048,7 +1048,7 @@ body {
   border-radius: 2rem;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-left:47rem;
+  margin-left:50rem;
   border: 1px solid rgba(139, 92, 246, 0.3);
   white-space: nowrap;
 }
@@ -1877,3 +1877,4 @@ body {
 }
 
 export default Home;
+
