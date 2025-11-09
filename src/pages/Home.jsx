@@ -87,10 +87,10 @@ function Home() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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",
+          "Authorization": "Bearer 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",
         },
         body: JSON.stringify({
-          model: "nvidia/nemotron-nano-12b-v2-vl:free",
+          model: "openai/gpt-4o-mini",
           messages: [
             {
               role: "system",
@@ -400,11 +400,23 @@ body {
   background-size: 100% 100%, 100% 100%, 100% 100%;
   background-attachment: fixed;
   color: #ffffff;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
   animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .home {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    padding: 2.5rem;
+  }
 }
 
 @keyframes fadeIn {
@@ -532,13 +544,13 @@ body {
 }
 
 .hero-content {
-  margin-top:7rem;
+  margin-top: 2rem;
   backdrop-filter: blur(20px) saturate(180%);
   background: 
     linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%),
     rgba(255, 255, 255, 0.03);
-  border-radius: 2.5rem;
-  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
     0 15px 50px rgba(0, 0, 0, 0.4),
@@ -546,6 +558,22 @@ body {
     0 0 80px rgba(139, 92, 246, 0.15);
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    margin-top: 5rem;
+    padding: 3rem 2.5rem;
+    border-radius: 2.5rem;
+  }
 }
 
 .hero-content::before {
@@ -570,12 +598,26 @@ body {
 
 .hero-icon {
   display: inline-flex;
-  padding: 1.5rem;
+  padding: 1rem;
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
   border-radius: 50%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   animation: iconPulse 3s ease-in-out infinite;
   box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+}
+
+@media (min-width: 768px) {
+  .hero-icon {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-icon {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @keyframes iconPulse {
@@ -595,12 +637,32 @@ body {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.2;
   letter-spacing: -0.02em;
   animation: titleGlow 3s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 2.25rem;
+    margin-bottom: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
 }
 
 @keyframes titleGlow {
@@ -631,13 +693,33 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   animation: fadeInUp 1s ease 0.3s both;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .hero-subtitle {
+    font-size: 1.05rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 @keyframes fadeInUp {
@@ -654,13 +736,14 @@ body {
 /* ====== Search Form ====== */
 .search-form {
   max-width: 900px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
   padding: 0.5rem;
   backdrop-filter: blur(20px);
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -669,6 +752,23 @@ body {
   position: relative;
   z-index: 10;
   animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+@media (min-width: 640px) {
+  .search-form {
+    flex-direction: row;
+    gap: 0.875rem;
+    border-radius: 1.35rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-form {
+    gap: 1rem;
+    border-radius: 1.5rem;
+    margin-bottom: 3rem;
+  }
 }
 
 @keyframes scaleIn {
@@ -714,13 +814,21 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.8rem 1.5rem;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   transition: all 0.3s ease;
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    gap: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1.2rem;
+  }
 }
 
 .search-container:focus-within {
@@ -743,10 +851,22 @@ body {
   border: none;
   background: transparent;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   outline: none;
   font-weight: 500;
   min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .search-input {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-input {
+    font-size: 1.05rem;
+  }
 }
 
 .search-input::placeholder {
@@ -777,10 +897,10 @@ body {
 }
 
 .search-button {
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.5rem;
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
   color: #fff;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -790,9 +910,27 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   flex-shrink: 0;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .search-button {
+    width: auto;
+    padding: 0.95rem 1.75rem;
+    border-radius: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-button {
+    padding: 1rem 2rem;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+  }
 }
 
 .search-button::before {
@@ -836,15 +974,34 @@ body {
 /* ====== Results Header ====== */
 .results-header {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
   animation: slideInLeft 0.6s ease;
+}
+
+@media (min-width: 640px) {
+  .results-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.35rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .results-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @keyframes slideInLeft {
@@ -859,7 +1016,7 @@ body {
 }
 
 .results-title {
-  font-size: 1.8rem;
+  font-size: 1.35rem;
   font-weight: 700;
   background: linear-gradient(135deg, #fff, #e0e7ff);
   -webkit-background-clip: text;
@@ -867,14 +1024,45 @@ body {
   background-clip: text;
 }
 
+@media (min-width: 640px) {
+  .results-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .results-title {
+    font-size: 1.65rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .results-title {
+    font-size: 1.8rem;
+  }
+}
+
 .results-count {
   padding: 0.5rem 1rem;
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
   border-radius: 2rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-left: 62rem;
+  margin-left:47rem;
   border: 1px solid rgba(139, 92, 246, 0.3);
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .results-count {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .results-count {
+    font-size: 0.9rem;
+  }
 }
 
 /* ====== Spinner ====== */
@@ -1038,9 +1226,32 @@ body {
 /* ====== Movie Grid ====== */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 3rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 3rem;
+  }
 }
 
 .movie-card-wrapper {
